@@ -17,7 +17,7 @@ namespace ChessEngine
             return String.Format("{0}{1}", Convert.ToChar(((int)'a') + file), 8 - rank);
         }
 
-        public static Dictionary<string, string[]> GenerateAllAlgebraicNotationMoves(PieceType pieceType, ChessColor pieceColor)
+        public static Dictionary<string, string[]> GenerateAllNonCaptureNonSpecialAlgebraicNotationMoves(PieceType pieceType, ChessColor pieceColor)
         {
             Dictionary<string, string[]> moveDictionary = new Dictionary<string, string[]>();
 
@@ -36,9 +36,31 @@ namespace ChessEngine
                             // A pawn can move forward one square, if that square is unoccupied. 
                             // If it has not yet moved, each pawn has the option of moving two squares 
                             // forward provided both squares in front of the pawn are unoccupied. A pawn cannot move backwards.
-                            if (rankRow == 0) continue;
-                            possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRow - 1);
-                            if (possibleMove != null) possibleMoves.Add(possibleMove);
+                            switch (pieceColor)
+                            {
+                                case ChessColor.White:
+                                    if (rankRow > 6) continue;
+                                    possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRow - 1);
+                                    if (possibleMove != null) possibleMoves.Add(possibleMove);
+                                    if (rankRow == 6)
+                                    {
+                                        possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRow - 2);
+                                        if (possibleMove != null) possibleMoves.Add(possibleMove);
+                                    }
+                                    break;
+                                case ChessColor.Black:
+                                    if (rankRow < 2) continue;
+                                    possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRow + 1);
+                                    if (possibleMove != null) possibleMoves.Add(possibleMove);
+                                    if (rankRow == 2)
+                                    {
+                                        possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRow + 2);
+                                        if (possibleMove != null) possibleMoves.Add(possibleMove);
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
                             break;
                         case PieceType.Rook:
                             break;

@@ -1,0 +1,6 @@
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\bin\Debug\ChessEngine.dll
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\bin\Debug\ChessEngine.pdb
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.csprojResolveAssemblyReference.cache
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.csproj.CoreCompileInputs.cache
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.dll
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.pdb

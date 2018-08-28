@@ -1,0 +1,14 @@
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\bin\Debug\WinFormsChess.exe.config
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\bin\Debug\WinFormsChess.exe
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\bin\Debug\WinFormsChess.pdb
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\bin\Debug\ChessEngine.dll
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\bin\Debug\ChessEngine.pdb
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.csprojResolveAssemblyReference.cache
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.ChessColorForm.resources
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.MainChessForm.resources
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.Properties.Resources.resources
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.GenerateResource.cache
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.CoreCompileInputs.cache
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.CopyComplete
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.exe
+C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.pdb

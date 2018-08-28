@@ -246,7 +246,7 @@ namespace WinFormsChess
                         if (chessColorDialog.ShowDialog() == DialogResult.OK)
                         {
                             StringBuilder sb = new StringBuilder();
-                            Dictionary<string, string[]> moves = ChessUtilities.GenerateAllAlgebraicNotationMoves(pieceType, chessColorDialog.SelectedColor);
+                            Dictionary<string, string[]> moves = ChessUtilities.GenerateAllNonCaptureNonSpecialAlgebraicNotationMoves(pieceType, chessColorDialog.SelectedColor);
 
                             foreach (KeyValuePair<string, string[]> kvp in moves)
                             {
