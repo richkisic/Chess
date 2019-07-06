@@ -76,16 +76,18 @@ namespace WinFormsChess
                 }
             }
 
-            for (int fileCol = 0; fileCol < INT_MAX_COL_FILE; fileCol++)
+            if (_lastSquareMousedOverCol != null && _lastSquareMousedOverRow != null)
             {
-                for (int rankRow = 0; rankRow < INT_MAX_ROW_RANK; rankRow++)
+                for (int fileCol = 0; fileCol < INT_MAX_COL_FILE; fileCol++)
                 {
-                    if ((_lastSquareMousedOverCol != null && _lastSquareMousedOverRow != null)
-                        && _lastSquareMousedOverCol == fileCol && _lastSquareMousedOverRow == rankRow)
+                    for (int rankRow = 0; rankRow < INT_MAX_ROW_RANK; rankRow++)
                     {
-                        using (Pen p = new Pen(Color.Purple, pnlBoard.Width / 100))
+                        if (_lastSquareMousedOverCol == fileCol && _lastSquareMousedOverRow == rankRow)
                         {
-                            e.Graphics.DrawRectangle(p, fileCol * squareWidth, rankRow * squareHeight, squareWidth, squareHeight);
+                            using (Pen p = new Pen(Color.Purple, pnlBoard.Width / 100))
+                            {
+                                e.Graphics.DrawRectangle(p, fileCol * squareWidth, rankRow * squareHeight, squareWidth, squareHeight);
+                            }
                         }
                     }
                 }
@@ -210,7 +212,22 @@ namespace WinFormsChess
         }
 
         private void pnlBoard_MouseUp(object sender, MouseEventArgs e)
-        {
+        { 
+            // do we know where we dropped?
+            if (_lastSquareMousedOverCol != null && _lastSquareMousedOverRow != null)
+            {
+                // do we know where we started?
+                if (_squareBeginDragCol != null && _squareBeginDragRow != null)
+                {
+                    ChessSquare startingSquare = _board.Squares[_squareBeginDragCol.Value, _squareBeginDragRow.Value];
+                    ChessSquare dropSquare = _board.Squares[_lastSquareMousedOverCol.Value, _lastSquareMousedOverRow.Value];
+                    if(_board.RequestMove(startingSquare, dropSquare))
+                    {
+                        
+                    }
+                }
+            }
+
             _squareBeginDragCol = null;
             _squareBeginDragRow = null;
             _currentPieceANMoves = new string[0];
@@ -264,6 +281,7 @@ namespace WinFormsChess
 #if !DEBUG
             utilitiesToolStripMenuItem.Visible = false;
 #endif
+            lblCurrentTurn.DataBindings.Add("Text", _board, "CurrentTurn");
         }
     }
 }

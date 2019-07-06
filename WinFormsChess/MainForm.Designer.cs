@@ -34,6 +34,8 @@
             this.generateMoveDictionaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pawnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCurrentTurn = new System.Windows.Forms.Label();
+            this.lblStaticCurrentTurn = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             this.utilitiesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(502, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(696, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,22 +80,42 @@
             // kingToolStripMenuItem
             // 
             this.kingToolStripMenuItem.Name = "kingToolStripMenuItem";
-            this.kingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kingToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.kingToolStripMenuItem.Text = "King";
             this.kingToolStripMenuItem.Click += new System.EventHandler(this.kingToolStripMenuItem_Click);
             // 
             // pawnToolStripMenuItem
             // 
             this.pawnToolStripMenuItem.Name = "pawnToolStripMenuItem";
-            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.pawnToolStripMenuItem.Text = "Pawn";
             this.pawnToolStripMenuItem.Click += new System.EventHandler(this.pawnToolStripMenuItem_Click);
+            // 
+            // lblCurrentTurn
+            // 
+            this.lblCurrentTurn.AutoSize = true;
+            this.lblCurrentTurn.Location = new System.Drawing.Point(600, 230);
+            this.lblCurrentTurn.Name = "lblCurrentTurn";
+            this.lblCurrentTurn.Size = new System.Drawing.Size(35, 13);
+            this.lblCurrentTurn.TabIndex = 2;
+            this.lblCurrentTurn.Text = "White";
+            // 
+            // lblStaticCurrentTurn
+            // 
+            this.lblStaticCurrentTurn.AutoSize = true;
+            this.lblStaticCurrentTurn.Location = new System.Drawing.Point(522, 230);
+            this.lblStaticCurrentTurn.Name = "lblStaticCurrentTurn";
+            this.lblStaticCurrentTurn.Size = new System.Drawing.Size(72, 13);
+            this.lblStaticCurrentTurn.TabIndex = 3;
+            this.lblStaticCurrentTurn.Text = "Current Turn: ";
             // 
             // MainChessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 468);
+            this.ClientSize = new System.Drawing.Size(696, 468);
+            this.Controls.Add(this.lblStaticCurrentTurn);
+            this.Controls.Add(this.lblCurrentTurn);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlBoard);
             this.MainMenuStrip = this.menuStrip1;
@@ -116,6 +138,8 @@
         private System.Windows.Forms.ToolStripMenuItem generateMoveDictionaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pawnToolStripMenuItem;
+        private System.Windows.Forms.Label lblCurrentTurn;
+        private System.Windows.Forms.Label lblStaticCurrentTurn;
     }
 }
 

@@ -4,3 +4,9 @@ C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngin
 C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.csproj.CoreCompileInputs.cache
 C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.dll
 C:\Users\richa\Source\Repos\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.pdb
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\ChessEngine\bin\Debug\ChessEngine.dll
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\ChessEngine\bin\Debug\ChessEngine.pdb
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.csprojAssemblyReference.cache
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.csproj.CoreCompileInputs.cache
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.dll
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\ChessEngine\obj\Debug\ChessEngine.pdb

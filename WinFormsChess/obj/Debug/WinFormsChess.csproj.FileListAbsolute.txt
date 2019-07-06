@@ -12,3 +12,17 @@ C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.C
 C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.CopyComplete
 C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.exe
 C:\Users\richa\Source\Repos\Chess\WinFormsChess\obj\Debug\WinFormsChess.pdb
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\bin\Debug\WinFormsChess.exe.config
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\bin\Debug\WinFormsChess.exe
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\bin\Debug\WinFormsChess.pdb
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\bin\Debug\ChessEngine.dll
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\bin\Debug\ChessEngine.pdb
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.csprojAssemblyReference.cache
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.ChessColorForm.resources
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.MainChessForm.resources
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.Properties.Resources.resources
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.GenerateResource.cache
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.CoreCompileInputs.cache
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.csproj.CopyComplete
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.exe
+C:\Users\Richard.Kisic.PST\Documents\GitHub\Chess\WinFormsChess\obj\Debug\WinFormsChess.pdb

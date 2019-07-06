@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ChessEngine
 {
 
-    public class ChessBoard
+    public class ChessBoard : INotifyPropertyChanged
     {
         private const int INT_MAX_COL_FILE = 8;
         private const int INT_MAX_ROW_RANK = 8;
@@ -35,6 +37,8 @@ namespace ChessEngine
 
         public void Reset()
         {
+            CurrentTurn = ChessColor.White; // reset back to first move
+
             for (int fileCol = 0; fileCol < INT_MAX_COL_FILE; fileCol++)
             {
                 for (int rankRow = 0; rankRow < INT_MAX_ROW_RANK; rankRow++)
@@ -109,5 +113,45 @@ namespace ChessEngine
         }
 
         public ChessSquare[,] Squares { get { return _squares; } }
+        
+        ChessColor _currentTurn;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // This method is called by the Set accessor of each property.  
+        // The CallerMemberName attribute that is applied to the optional propertyName  
+        // parameter causes the property name of the caller to be substituted as an argument.  
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public ChessColor CurrentTurn
+        {
+            get
+            {
+                return _currentTurn;
+            }
+            private set
+            {
+                _currentTurn = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public bool RequestMove(ChessSquare moveFrom, ChessSquare moveTo)
+        {
+            // TODO: if(moveFrom == null) throw new P
+            // TODO: if(moveFrom.Piece == null) throw new 
+            // TODO: if(moveFrom.Piece.Color == moveTo.Piece.Color)
+            if (moveFrom.Piece.Color != CurrentTurn) return false;
+
+            moveTo.Piece = moveFrom.Piece;
+            moveFrom.Piece = null;
+
+            CurrentTurn = CurrentTurn == ChessColor.White ? ChessColor.Black : ChessColor.White; // the move of a piece indicates a new turn
+
+            return true;
+        }
     }
 }
