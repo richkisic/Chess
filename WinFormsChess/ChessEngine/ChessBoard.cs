@@ -14,6 +14,8 @@ namespace ChessEngine
         private const int INT_MAX_COL_FILE = 8;
         private const int INT_MAX_ROW_RANK = 8;
         private readonly ChessSquare[,] _squares = new ChessSquare[INT_MAX_COL_FILE, INT_MAX_ROW_RANK];
+        private List<ChessPiece> _capturedByBlack = new List<ChessPiece>();
+        private List<ChessPiece> _capturedByWhite = new List<ChessPiece>();
 
         public ChessBoard()
         {
@@ -137,18 +139,66 @@ namespace ChessEngine
                 _currentTurn = value;
                 NotifyPropertyChanged();
             }
+        } 
+
+        public List<ChessPiece> CapturedByWhite
+        {
+            get
+            {
+                return _capturedByWhite;
+            }
+            private set
+            {
+                _capturedByWhite = value;
+                NotifyPropertyChanged();
+            }
         }
 
-        public bool RequestMove(ChessSquare moveFrom, ChessSquare moveTo)
+        public List<ChessPiece> CapturedByBlack
         {
-            // TODO: if(moveFrom == null) throw new P
-            // TODO: if(moveFrom.Piece == null) throw new 
-            // TODO: if(moveFrom.Piece.Color == moveTo.Piece.Color)
+            get
+            {
+                return _capturedByBlack;
+            }
+            private set
+            {
+                _capturedByBlack = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public bool IsValidMove(ChessSquare moveFrom, ChessSquare moveTo)
+        {
+            if (moveFrom == moveTo) return false;
+            if (moveFrom == null) throw new ArgumentNullException("moveFrom");
+            if (moveTo == null) throw new ArgumentNullException("moveTo");
+            if (moveFrom.Piece == null) throw new ArgumentNullException("moveFrom.Piece");
+            if (moveFrom.Piece.Color == moveTo.Piece.Color) return false;
             if (moveFrom.Piece.Color != CurrentTurn) return false;
+
+
+
+            return true;
+        }
+
+        public bool AttemptMove(ChessSquare moveFrom, ChessSquare moveTo)
+        {
+            if (!IsValidMove(moveFrom, moveTo)) return false;
+
+            if(moveTo.Piece != null) // it's a valid move and the space is occupied; a piece is about to be captured
+            {
+                if(CurrentTurn == ChessColor.White)
+                {
+                    _capturedByWhite.Add(moveTo.Piece);
+                }
+                else if (CurrentTurn == ChessColor.Black)
+                {
+                    _capturedByBlack.Add(moveTo.Piece);
+                }
+            }
 
             moveTo.Piece = moveFrom.Piece;
             moveFrom.Piece = null;
-
             CurrentTurn = CurrentTurn == ChessColor.White ? ChessColor.Black : ChessColor.White; // the move of a piece indicates a new turn
 
             return true;

@@ -221,7 +221,7 @@ namespace WinFormsChess
                 {
                     ChessSquare startingSquare = _board.Squares[_squareBeginDragCol.Value, _squareBeginDragRow.Value];
                     ChessSquare dropSquare = _board.Squares[_lastSquareMousedOverCol.Value, _lastSquareMousedOverRow.Value];
-                    if(_board.RequestMove(startingSquare, dropSquare))
+                    if(_board.AttemptMove(startingSquare, dropSquare))
                     {
                         
                     }
