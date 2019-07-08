@@ -173,7 +173,7 @@ namespace ChessEngine
             if (moveFrom == null) throw new ArgumentNullException("moveFrom");
             if (moveTo == null) throw new ArgumentNullException("moveTo");
             if (moveFrom.Piece == null) throw new ArgumentNullException("moveFrom.Piece");
-            if (moveFrom.Piece.Color == moveTo.Piece.Color) return false;
+            if (moveTo.Piece != null && moveFrom.Piece.Color == moveTo.Piece.Color) return false;
             if (moveFrom.Piece.Color != CurrentTurn) return false;
 
 

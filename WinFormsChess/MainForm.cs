@@ -243,6 +243,10 @@ namespace WinFormsChess
         {
             SaveMovesToFile(PieceType.Pawn);
         }
+        private void RookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveMovesToFile(PieceType.Rook);
+        }
 
         private static void SaveMovesToFile(PieceType pieceType)
         {
@@ -283,5 +287,6 @@ namespace WinFormsChess
 #endif
             lblCurrentTurn.DataBindings.Add("Text", _board, "CurrentTurn");
         }
+
     }
 }

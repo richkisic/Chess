@@ -49,10 +49,10 @@ namespace ChessEngine
                                     }
                                     break;
                                 case ChessColor.Black:
-                                    if (rankRow < 2) continue;
+                                    if (rankRow < 1) continue;
                                     possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRow + 1);
                                     if (possibleMove != null) possibleMoves.Add(possibleMove);
-                                    if (rankRow == 2)
+                                    if (rankRow == 1)
                                     {
                                         possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRow + 2);
                                         if (possibleMove != null) possibleMoves.Add(possibleMove);
@@ -63,6 +63,38 @@ namespace ChessEngine
                             }
                             break;
                         case PieceType.Rook:
+                            // The rook moves horizontally or vertically, through any number of unoccupied squares. 
+                            // As with captures by other pieces, the rook captures by occupying the square on which the enemy piece sits. 
+                            // The rook also participates, with the king, in a special move called castling, which is not covered, here.
+                            
+                            // Every possible move up:
+                            for(int rankRowMove = rankRow-1; rankRowMove >= 0; rankRowMove--)
+                            {
+                                possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRowMove);
+                                if (possibleMove != null) possibleMoves.Add(possibleMove);
+                            }
+
+                            // Every possible move down:
+                            for (int rankRowMove = rankRow+1; rankRowMove < INT_MAX_ROW_RANK; rankRowMove++)
+                            {
+                                possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileCol, rankRowMove);
+                                if (possibleMove != null) possibleMoves.Add(possibleMove);
+                            }
+
+                            // Every possible move right:
+                            for (int fileColMove = fileCol+1; fileColMove < INT_MAX_COL_FILE; fileColMove++)
+                            {
+                                possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileColMove, rankRow);
+                                if (possibleMove != null) possibleMoves.Add(possibleMove);
+                            }
+
+                            // Every possible move left:
+                            for (int fileColMove = fileCol-1; fileColMove >= 0; fileColMove--)
+                            {
+                                possibleMove = GetAlgebraicNotationFromRowZBTLFileRank(fileColMove, rankRow);
+                                if (possibleMove != null) possibleMoves.Add(possibleMove);
+                            }
+
                             break;
                         case PieceType.Knight:
                             break;
